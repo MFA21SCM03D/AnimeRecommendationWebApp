@@ -1,0 +1,15 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    overflow: hidden;
+    border-radius: 1em;
+}
+.card__thumbnail_image{
+    background-position: center;
+    background-size: cover;
+    border-radius: 1.25em;
+    width: 200px;
+}

@@ -1,0 +1,7 @@
+.header{
+    width: inherit;
+    background-color: hsl(222, 13%, 10%);
+    color: white;
+    border: 0.6px solid white;
+    padding: 2px 8px;
+}
