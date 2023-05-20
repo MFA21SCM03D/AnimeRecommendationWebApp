@@ -1,15 +1,34 @@
 .card{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    width: fit-content;
+    font-size: clamp(0.8rem, 2vh, 1rem);
+    position: relative;
+}
+
+.card__thumbnail_image{
+    border-radius: 1.25em;
+    width: 200px;
+}
+
+.card__details{
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: fit-content;
-    overflow: hidden;
-    border-radius: 1em;
+    margin: 0 24px;
+    width: 300px;
 }
-.card__thumbnail_image{
-    background-position: center;
-    background-size: cover;
-    border-radius: 1.25em;
-    width: 200px;
+
+.card__details__description{
+    position: absolute;
+    bottom: 0;
+    border: none;
+    background-color: white;
+    border-radius: 0.8em;
+    width: inherit;
+    height: 24px;
+    cursor: pointer;
 }

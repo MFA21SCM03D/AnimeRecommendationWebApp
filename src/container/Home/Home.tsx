@@ -5,7 +5,7 @@ import './Home.css'
 import {Card, Header} from '../../components';
 
 function Home() {
-    const APIURL = "http://127.0.0.1:8000/anime/"
+    const APIURL = "http://127.0.0.1:8000/"
     const [animeData, setAnimeData] = useState<AnimeData[]>()
 
     async function getAnimeData() {
