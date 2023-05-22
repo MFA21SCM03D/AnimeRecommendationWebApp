@@ -1,17 +1,13 @@
 import React from 'react'
 import { AnimeData } from '../../models/anime'
 import './Card.css'
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Card(props:AnimeData) {
-  const APIURL = "http://127.0.0.1:8000/"
-  async function getAnimeDescription(title: string) {
-    // await axios.get(APIURL).then(response => {console.log(response.data.payload)})
-    try {
-        await axios.get(`${APIURL}anime/${title}`).then( response => console.log(response.data.payload))
-    } catch (error) {
-        console.error(error);
-    }
+
+  const navigate = useNavigate()
+  async function getAnimeDescription() {
+    navigate(`anime/${props.title}`, { state: {props} })
   }
   
     return (
@@ -22,7 +18,7 @@ function Card(props:AnimeData) {
           <p className="card__details__anime_type">{props.anime_type}</p>
           <p className="card__details__released">{props.released}</p>
           <p className="card__details__status">{props.status}</p>
-          <button className="card__details__description" onClick={() => getAnimeDescription(props.title)}>See Description</button>
+          <button className="card__details__description" onClick={() => getAnimeDescription()}>See Description</button>
         </div>
         
     </section>
