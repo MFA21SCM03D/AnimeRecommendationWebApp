@@ -3,17 +3,18 @@ import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import { AnimeData } from '../../models/anime';
 import Card from '../Card/Card';
+import './Description.css'
 
 function Description() {
   const APIURL = process.env.REACT_APP_API
   const location = useLocation()
-  const props = location.state.props
+  const props = location.state.title || location.state.animeSearch
   const [animeDescription, setAnimeDescription] = useState<AnimeData[]>()
+  console.log("Description page", props)
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   async function getAnimeDescription(){
     try {
-      await axios.get(`${APIURL}anime/${props.title}`).then( response => setAnimeDescription(response.data.payload))
+      await axios.get(`${APIURL}anime`, {params: { title : props}}).then( response => setAnimeDescription(response.data.payload))
     } catch (error) {
       console.error(error);
     }
@@ -21,14 +22,15 @@ function Description() {
 
   useEffect(() => {
     getAnimeDescription()
-  }, [getAnimeDescription])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   
   return (
     <div className="description">
       {
         animeDescription ? 
         (
-            animeDescription.map((anime) => <Card key={anime.title} {...anime}/>
+            animeDescription.map((anime) => <Card key={anime.title} {...anime} className='description__'/>
         )):
         (
             <div>Loading...</div>    

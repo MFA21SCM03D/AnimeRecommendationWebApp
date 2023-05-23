@@ -8,7 +8,7 @@ function Home() {
     const APIURL = process.env.REACT_APP_API
     const [animeData, setAnimeData] = useState<AnimeData[]>()
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
     async function getAnimeData() {
         try {
             await axios.get(`${APIURL}`).then( response => setAnimeData(response.data.payload))
@@ -19,16 +19,17 @@ function Home() {
 
     useEffect(() => {
         getAnimeData() 
-    }, [getAnimeData])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
   return (
     <div className="home">
         <Header/>
-        <div className="home__card">
+        <div className="home__card__grid">
             {
             animeData ? 
             (
-                animeData.map((anime) => <Card key={anime.title} {...anime}/>
+                animeData.map((anime) => <Card key={anime.title} {...anime} className= 'home__'/>
             )):
             (
                 <div>Loading...</div>    

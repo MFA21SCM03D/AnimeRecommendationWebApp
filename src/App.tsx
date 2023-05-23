@@ -13,7 +13,7 @@ function App() {
         <Router>
         <Routes>
         <Route path = '/' element = {<Home/>} />
-        <Route path = '/anime/:title' element = {<Description/>} />
+        <Route path = '/anime' element = {<Description/>} />
       </Routes>
       </Router>
       </QueryClientProvider>

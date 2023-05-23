@@ -1,4 +1,4 @@
-.card{
+.home__card{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,12 +8,12 @@
     position: relative;
 }
 
-.card__thumbnail_image{
+.home__card__thumbnail_image{
     border-radius: 1.25em;
     width: 200px;
 }
 
-.card__details{
+.home__card__details{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,7 +22,7 @@
     width: 300px;
 }
 
-.card__details__description{
+.home__card__details__description{
     position: absolute;
     bottom: 0;
     border: none;
@@ -31,4 +31,90 @@
     width: inherit;
     height: 24px;
     cursor: pointer;
+}
+
+.home__card__details__summary_othernames, .home__card__details__genre{
+    display: none;
+}
+
+.description__card{
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 60px;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+}
+
+.description__card__thumbnail_image{
+    border-radius: 1.25em;
+    width: 350px;
+    border: none;
+    margin-top: 350px;
+}
+
+.description__card__details{
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 120px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.description__card__details__genre_title{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 30px;
+    width: 50%;
+}
+
+.description__card__details__genre{
+    font-size: clamp(1rem, 2vh, 1.8rem);
+    letter-spacing: 0.2em;
+    color: #585454fb;
+}
+
+.description__card__details__title{
+   font-size: clamp(3rem, 3vh, 5rem);
+   word-wrap: break-word;
+}
+
+.description__card__details__summary_othernames{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    background: none;    
+    width: 70%;
+    text-align: start;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 120px;
+}
+
+.description__card__details__plot_summary{
+   font-size: clamp(1rem, 2vh, 1.8rem);
+   word-wrap: break-word;
+   width: inherit;
+   position: absolute;
+   right: 0;
+}
+.description__card__details__other_names{
+    font-size: clamp(1rem, 2vh, 1.8rem);
+    word-spacing: 0.1em;
+    letter-spacing: 0.2em;
+    color: #585454fb;
+}
+
+.description__card__details__description{
+    display: none;
 }

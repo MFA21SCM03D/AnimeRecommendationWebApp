@@ -8,3 +8,7 @@ export interface AnimeData{
     other_names: string, 
     image: string
 }
+
+export interface CardProps extends AnimeData {
+    className?: string;
+  }
